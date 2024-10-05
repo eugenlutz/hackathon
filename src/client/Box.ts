@@ -23,6 +23,11 @@ class Box {
         this.mesh = new Mesh(geometry, material)
         
     }
+
+
+    public getMesh(): Mesh {
+        return this.mesh;
+    }
 }
 
 export default Box

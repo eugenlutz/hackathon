@@ -21,8 +21,7 @@ class SceneManager {
         this.initCamera()
         this.initLights()
         this.loadModel()
-        this.interactionManager = new InteractionManager(this.scene, this.camera, new WarehouseClient());
-        
+        this.interactionManager = new InteractionManager(this.scene, this.camera, new WarehouseClient(), this.boxes);
     }
 
     initCamera() {
@@ -67,11 +66,16 @@ class SceneManager {
                 console.log('An error happened:', error);
 
             })
+
+        this.addBox(1, new Vector3(1,2,3));
+        this.addBox(2, new Vector3(4,5,6));
+        this.addBox(3, new Vector3(7,8,9));
     }
 
     addBox(id: number, position: Vector3) {
         let box = new Box(id, position)
         this.scene.add(box.mesh)
+        this.boxes.push(box)
     }
 }
 
