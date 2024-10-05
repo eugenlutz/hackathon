@@ -6,8 +6,12 @@ import {
     createId,
     moveIdAuto
   } from './WarehouseController';
+  import db from './db'
 
 const port: number = 3000
+
+db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
+db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
 
 class App {
     private server: http.Server
@@ -45,5 +49,21 @@ class App {
         })
     }
 }
+
+function handleError(err?:Error | NodeJS.Signals | void) {
+    if(err) {
+        console.error(err);
+
+        if(err instanceof Error) {
+            console.error(err.stack);    
+        }
+    }
+    
+    db.disconnect({ force: true });
+    process.exit(0);
+}
+
+process.on('uncaughtException', handleError);
+process.on('SIGINT', handleError);
 
 new App(port).Start()
