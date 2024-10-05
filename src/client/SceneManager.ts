@@ -17,10 +17,11 @@ class SceneManager {
         this.boxes = new Array()
         this.lights = new Array()
         this.loader = new GLTFLoader()
-        this.interactionManager = new InteractionManager(this.scene, this.camera);
         this.initCamera()
         this.initLights()
         this.loadModel()
+        this.interactionManager = new InteractionManager(this.scene, this.camera);
+        
     }
 
     initCamera() {
