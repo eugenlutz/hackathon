@@ -6,16 +6,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const http_1 = __importDefault(require("http"));
+const cors_1 = __importDefault(require("cors"));
 const WarehouseController_1 = require("./WarehouseController");
 const port = 3000;
 class App {
     constructor(port) {
         this.port = port;
         const app = (0, express_1.default)();
+        // Allow requests from specific origins (e.g., http://localhost:3000)
+        const corsOptions = {
+            origin: 'http://127.0.0.1:3000', // Replace this with your front-end URL
+            methods: 'GET,POST,PUT,DELETE', // Allowed methods
+            allowedHeaders: 'Content-Type,Authorization', // Allowed headers
+        };
+        app.use((0, cors_1.default)());
         app.use(express_1.default.static(path_1.default.join(__dirname, '../client')));
         app.post('/move/:id', WarehouseController_1.moveIdAuto);
         app.post('/move/:id:bin', WarehouseController_1.moveId);
         app.put('create/:id', WarehouseController_1.createId);
+        app.listen(4000, () => console.log('Server running on port 4000'));
         // In the webpack version of the boilerplate, it is not necessary
         // to add static references to the libs in node_modules if
         // you are using module specifiers in your client.ts imports.

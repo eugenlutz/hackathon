@@ -2,6 +2,7 @@ import { AmbientLight, Light, PerspectiveCamera, Scene, SpotLight, Vector3 } fro
 import Box from "./Box";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import InteractionManager from './InteractionManager';
+import WarehouseClient from "./WarehouseClient";
 
 class SceneManager {
 
@@ -20,7 +21,7 @@ class SceneManager {
         this.initCamera()
         this.initLights()
         this.loadModel()
-        this.interactionManager = new InteractionManager(this.scene, this.camera);
+        this.interactionManager = new InteractionManager(this.scene, this.camera, new WarehouseClient());
         
     }
 

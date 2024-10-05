@@ -1,6 +1,7 @@
 import express from 'express'
 import path from 'path'
 import http from 'http'
+import cors from 'cors';
 import {
     moveId,
     createId,
@@ -16,10 +17,13 @@ class App {
     constructor(port: number) {
         this.port = port
         const app = express()
+        app.use(cors());
         app.use(express.static(path.join(__dirname, '../client')))
         app.post('/move/:id', moveIdAuto)
         app.post('/move/:id:bin', moveId)
         app.put('create/:id', createId)
+        app.listen(4000, () => console.log('Server running on port 4000'));
+
         // In the webpack version of the boilerplate, it is not necessary
         // to add static references to the libs in node_modules if
         // you are using module specifiers in your client.ts imports.
