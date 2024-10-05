@@ -8,7 +8,10 @@ const path_1 = __importDefault(require("path"));
 const http_1 = __importDefault(require("http"));
 const cors_1 = __importDefault(require("cors"));
 const WarehouseController_1 = require("./WarehouseController");
+const db_1 = __importDefault(require("./db"));
 const port = 3000;
+db_1.default.eventManager.on(db_1.default.Events.Connected, () => console.log('Successfully connected to Database.'));
+db_1.default.eventManager.on(db_1.default.Events.Disconnected, () => console.log('Disconnected from DB.'));
 class App {
     constructor(port) {
         this.port = port;
@@ -42,4 +45,16 @@ class App {
         });
     }
 }
+function handleError(err) {
+    if (err) {
+        console.error(err);
+        if (err instanceof Error) {
+            console.error(err.stack);
+        }
+    }
+    db_1.default.disconnect({ force: true });
+    process.exit(0);
+}
+process.on('uncaughtException', handleError);
+process.on('SIGINT', handleError);
 new App(port).Start();
