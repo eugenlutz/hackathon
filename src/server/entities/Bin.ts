@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Box {
+export class Bin {
 
     @PrimaryGeneratedColumn({
         type: "int"
@@ -20,6 +20,6 @@ export class Box {
         nullable: false,
         default: 1,
     })
-    size: number;
+    capa: number;
 
 }
