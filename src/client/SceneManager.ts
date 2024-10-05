@@ -15,6 +15,9 @@ class SceneManager {
         this.boxes = new Array()
         this.lights = new Array()
         this.loader = new GLTFLoader()
+        this.initCamera()
+        this.initLights()
+        this.loadModel()
     }
 
     initCamera() {
