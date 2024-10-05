@@ -3,26 +3,36 @@ import Box from "./Box";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import InteractionManager from './InteractionManager';
 import WarehouseClient from "./WarehouseClient";
+import { Shelf } from "./models/shelf";
 
 class SceneManager {
 
+    warehouseClient: WarehouseClient
     loader: GLTFLoader
     scene: Scene
     boxes: Box[]
     camera!: PerspectiveCamera
     lights: Light[]
+    shelves: Shelf[]
     interactionManager: InteractionManager
 
-    constructor(scene: Scene) {
+    constructor(scene: Scene, warehouseClient: WarehouseClient) {
         this.scene = scene
+        this.warehouseClient = warehouseClient
         this.boxes = new Array()
         this.lights = new Array()
+        this.shelves = new Array()
         this.loader = new GLTFLoader()
         this.initCamera()
         this.initLights()
         this.loadModel()
-        this.interactionManager = new InteractionManager(this.scene, this.camera, new WarehouseClient());
+        this.interactionManager = new InteractionManager(this.scene, this.camera, warehouseClient);
         
+    }
+
+    initShelves()
+    {
+        this.warehouseClient.GetBins(),
     }
 
     initCamera() {
@@ -72,6 +82,11 @@ class SceneManager {
     addBox(id: number, position: Vector3) {
         let box = new Box(id, position)
         this.scene.add(box.mesh)
+    }
+
+    moveBox(id: number, position: Vector3)
+    {
+
     }
 }
 

@@ -1,26 +1,47 @@
-import * as THREE from 'three';
-import { shelfWidth, shelfDepth, shelfHeight } from './shelf';
+import { BoxGeometry, Mesh, MeshBasicMaterial, Vector3 } from "three"
+import { BoxColors } from "./colors"
+import { Dimension } from "./dimension"
 
-const boxWidth = shelfWidth * 0.9;
-const defaultBoxHeight = 0.25;
-const boxDepth = shelfDepth * 0.9;
-const defaultBoxColor = 0xff5733;
+let BoxDimensions: Dimension = {
+    Width: 1.8,
+    Height: 0.25,
+    Length: 0.9
+}
 
-export class Box {
-    mesh: THREE.Mesh;
+class Box {
+    id: number
+    mesh!: Mesh
 
-    constructor(shelfCapacity?: number, color: THREE.Color = new THREE.Color(defaultBoxColor)) {
-        const newBoxHeight = shelfCapacity != null 
-            ? (shelfHeight / (shelfCapacity + 1)) * 0.5 
-            : defaultBoxHeight;
+    constructor(id: number, position: Vector3) 
+    {
+        this.id = id
 
-        const boxGeometry = new THREE.BoxGeometry(boxWidth, newBoxHeight, boxDepth);
-        const boxMaterial = new THREE.MeshStandardMaterial({
-            color,
-            metalness: 0.5,
-            roughness: 0.5
-        });
+        this.init(position)
+    }
 
-        this.mesh = new THREE.Mesh(boxGeometry, boxMaterial);
+    init(position: Vector3) 
+    {
+        const geometry = new BoxGeometry(
+            BoxDimensions.Width, 
+            BoxDimensions.Height, 
+            BoxDimensions.Length
+        )
+
+        this.moveTo(position)
+        const material = new MeshBasicMaterial(
+            {
+                color: BoxColors.Default
+            }
+        )
+
+        this.mesh = new Mesh(geometry, material)
+        
+    }
+
+    moveTo(position: Vector3)
+    {        
+        this.mesh.geometry.translate(position.x, position.y, position.z)
     }
 }
+
+export default Box

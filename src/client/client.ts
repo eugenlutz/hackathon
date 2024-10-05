@@ -1,12 +1,13 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import SceneManager from './SceneManager';
+import WarehouseClient from './WarehouseClient';
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
-
-const sceneManager = new SceneManager(new THREE.Scene())
+const warehouseClient = new WarehouseClient()
+const sceneManager = new SceneManager(new THREE.Scene(), warehouseClient)
 const controls = new OrbitControls(sceneManager.camera, renderer.domElement)
 
 window.addEventListener('resize', onWindowResize, false)
