@@ -6,7 +6,8 @@ import {
 
 const router = express.Router();
 
-router.post('/move/:id', moveId);
-router.put('/create/:id/:bin', createId);
+router.post('/move/:id:bin', moveId);
+router.post('/move/:id', moveIdAuto)
+router.put('/create/:id/', createId);
 
 export default router;

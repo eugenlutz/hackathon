@@ -11,3 +11,9 @@ export const moveId = (req: Request, res: Response) =>
     console.log('moveId called with ' + req)
     res.send('moveId received')
 }
+
+export const moveIdAuto = (req: Request, res: Response) => 
+    {
+        console.log('moveIdAuto called with ' + req)
+        res.send('moveId received')
+    }
