@@ -13,6 +13,7 @@ class App {
         this.port = port;
         const app = (0, express_1.default)();
         app.use(express_1.default.static(path_1.default.join(__dirname, '../client')));
+        app.post('/move/:id', WarehouseController_1.moveIdAuto);
         app.post('/move/:id:bin', WarehouseController_1.moveId);
         app.put('create/:id', WarehouseController_1.createId);
         // In the webpack version of the boilerplate, it is not necessary

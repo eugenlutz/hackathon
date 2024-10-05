@@ -3,7 +3,8 @@ import path from 'path'
 import http from 'http'
 import {
     moveId,
-    createId
+    createId,
+    moveIdAuto
   } from './WarehouseController';
 
 const port: number = 3000
@@ -16,6 +17,7 @@ class App {
         this.port = port
         const app = express()
         app.use(express.static(path.join(__dirname, '../client')))
+        app.post('/move/:id', moveIdAuto)
         app.post('/move/:id:bin', moveId)
         app.put('create/:id', createId)
         // In the webpack version of the boilerplate, it is not necessary
