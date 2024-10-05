@@ -1,7 +1,7 @@
 
 const WAREHOUSE_URL_BASE = 'localhost:3000/'
 
-type MoveResponse = { id: number, bin: string }
+type MoveResponse = { bin: string }
 
 export async function moveIdAuto(id: number): Promise<MoveResponse>
 {
