@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import IWarehouseClient from './WarehouseClient';
-import Box from "./Box";
+import Box from "./models/box";
 
 interface IInteractionManager {
     showContextMenu(event: MouseEvent, id: number): void;
