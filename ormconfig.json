@@ -1,0 +1,19 @@
+{
+    "type": "sqlite",
+    "database": "src/db/warehouse.sqlite3",
+    "synchronize": true,
+    "entities": [
+        "src/entity/*.ts"
+    ],
+    "subscribers": [
+        "src/subscriber/*.ts"
+    ],
+    "migrations": [
+        "src/migration/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+    }  
+}
