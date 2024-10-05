@@ -11,13 +11,13 @@ export const moveId = (
     res: Response) => 
 {
     console.log('moveId called with ' + req.params['id'])
-    res.status(200).json({bin: "12"})
+    res.status(200).json({id : req.params['id'], bin: "12"})
 }
 
 export const moveIdAuto = (    
     req: Request, 
     res: Response) => 
 {
-    console.log('moveId called with ' + req.params['id'] + 'and' + req.params['bin'])
-    res.status(200).json({bin: "12"})
+    console.log('moveIdAuto called with ' + req.params['id'] + 'and' + req.params['bin'])
+    res.status(200).json({ id: req.params['id'], bin: "12"})
 }
