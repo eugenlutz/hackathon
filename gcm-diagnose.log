@@ -1,0 +1,198 @@
+﻿Diagnose log at 2024-10-05T10:21:40Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.5.0+d34930736e131ad80e5690e5634ced1808aff3e2
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26100)
+Reading environment variables... OK
+ Variables:
+HOMEPATH=\Users\DomenicoAurea
+DriverData=C:\Windows\System32\Drivers\DriverData
+COMPUTERNAME=WH1L-BQCH4W3
+MSYSTEM=MINGW64
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+OneDrive=C:\Users\DomenicoAurea\OneDrive - Freudenberg Technical Textiles and Filtration
+USERNAME=DomenicoAurea
+TMP=C:\Users\DOMENI~1\AppData\Local\Temp
+HOME=C:\Users\DomenicoAurea
+PROCESSOR_REVISION=9a03
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+VSCODE_INJECTION=1
+GIT_ASKPASS=c:\Users\DomenicoAurea\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass.sh
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Enterprise
+TEMP=C:\Users\DOMENI~1\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\DomenicoAurea\AppData\Local
+PUBLIC=C:\Users\Public
+TERM=xterm-256color
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+ProgramW6432=C:\Program Files
+USERDNSDOMAIN=nw.intern
+USERDOMAIN=NW
+ProgramFiles(x86)=C:\Program Files (x86)
+Path=C:/Program Files/Git/mingw64/libexec/git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\DomenicoAurea\bin;C:\Program Files\PowerShell\7;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\DEVQPDC\Tools;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Program Files\nodejs\;C:\Users\DomenicoAurea\AppData\Local\Microsoft\WindowsApps;C:\Users\DomenicoAurea\.dotnet\tools;C:\Users\DomenicoAurea\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DomenicoAurea\AppData\Roaming\npm
+TERM_PROGRAM=vscode
+PROCESSOR_LEVEL=6
+NUMBER_OF_PROCESSORS=20
+TMPDIR=C:\Users\DOMENI~1\AppData\Local\Temp
+TNS_ADMIN=C:\DEVQPDC\Repos\qpdc\config
+TERM_PROGRAM_VERSION=1.94.0
+VSCODE_GIT_ASKPASS_MAIN=c:\Users\DomenicoAurea\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass-main.js
+PSModulePath=C:\Users\DomenicoAurea\OneDrive - Freudenberg Technical Textiles and Filtration\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\program files\powershell\7\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+EFC_12056=1
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+NODE_OPTIONS= --require c:/Users/DomenicoAurea/AppData/Roaming/Code/User/workspaceStorage/6bb658c900bd514b8c4025ebb9578d36/ms-vscode.js-debug/bootloader.js 
+VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-a8d9e2e078-sock
+IGCCSVC_DB=AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAo0fKXA7K+0GWPS4QNtd0KwQAAAACAAAAAAAQZgAAAAEAACAAAACSoX/sbpq7dfXru3ce4OaIV8LnyqSlC0/n0R1LptCSJwAAAAAOgAAAAAIAACAAAADoMbJIQ7Dn2Uzwwwaqc7exbA8+fRNrFjxUNX0URQIJe2AAAABQxyG0XARduqQcJj5XIC1mkDOrfPuKHPquGwACv6XdFLscfYmiwv3OjTCIooeH+2RHX6DJpHi0ODNzKQic02tOyR/Z+4nZ2ZEn54boySqaFqcKUqxXEFzJmlPfNOxoAOVAAAAA/OV31QHkOoLtVYhNkmIN12CH5enxhWefCzrtM0xSap6rQPOttnNJmidJEPvG7ws8PNfrZsq3j2NipWEN1XHxoA==
+PLINK_PROTOCOL=ssh
+ProgramData=C:\ProgramData
+MSYS=disable_pcon
+ProgramFiles=C:\Program Files (x86)
+GIT_TRACE2_PARENT_SID=956b0375-b7ac-4b2e-ba9c-1636a16e2dbd
+VSCODE_GIT_ASKPASS_NODE=C:\Users\DomenicoAurea\AppData\Local\Programs\Microsoft VS Code\Code.exe
+SystemRoot=C:\WINDOWS
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+SESSIONNAME=Console
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+CommonProgramW6432=C:\Program Files\Common Files
+ZES_ENABLE_SYSMAN=1
+LOGONSERVER=\\WH1L-BQCH4W3
+VSCODE_INSPECTOR_OPTIONS=:::{"inspectorIpc":"\\\\.\\pipe\\node-cdp.24792-098d20af-0.sock.deferred","deferredMode":true,"waitForDebugger":"","execPath":"C:\\Program Files\\nodejs\\node.exe","onlyEntrypoint":false,"autoAttachMode":"always"}
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+COLORTERM=truecolor
+USERDOMAIN_ROAMINGPROFILE=NW
+APPDATA=C:\Users\DomenicoAurea\AppData\Roaming
+HOMEDRIVE=C:
+OneDriveCommercial=C:\Users\DomenicoAurea\OneDrive - Freudenberg Technical Textiles and Filtration
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_18168_WGTVYGMTUEOEBUXW
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_ARCHITECTURE=x86
+USERPROFILE=C:\Users\DomenicoAurea
+OS=Windows_NT
+ComSpec=C:\WINDOWS\system32\cmd.exe
+SystemDrive=C:
+windir=C:\WINDOWS
+LANG=en_US.UTF-8
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\DomenicoAurea\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\DomenicoAurea\AppData\Local\Temp\ff1b472ba45b963414c02a78'... OK
+Reading from temporary file 'C:\Users\DomenicoAurea\AppData\Local\Temp\ff1b472ba45b963414c02a78'... OK
+Deleting temporary file 'C:\Users\DomenicoAurea\AppData\Local\Temp\ff1b472ba45b963414c02a78'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\DomenicoAurea
+UserDataDirectoryPath: C:\Users\DomenicoAurea\.gcm
+GetCurrentDirectory(): C:\DEVQPDC\Repos\hackathon
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:50518/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.45.2.windows.1'
+Locating current repository...Git repository at 'C:/DEVQPDC/Repos/hackathon/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig	http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/DomenicoAurea/.gitconfig	credential.http://wh1qpdctfs.nw.intern:8080.provider=generic
+file:C:/Users/DomenicoAurea/.gitconfig	user.name=Domenico Aurea
+file:C:/Users/DomenicoAurea/.gitconfig	user.email=Domenico.Aurea@freudenberg-pm.com
+file:C:/Users/DomenicoAurea/.gitconfig	credential.helper=
+file:C:/Users/DomenicoAurea/.gitconfig	credential.helper=manager
+file:C:/Users/DomenicoAurea/.gitconfig	credential.helper=
+file:C:/Users/DomenicoAurea/.gitconfig	credential.helper=C:/Program\ Files/Git/mingw64/bin/git-credential-manager.exe
+file:C:/Users/DomenicoAurea/.gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/eugenlutz/hackathon.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.main.vscode-merge-base=origin/main
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\DomenicoAurea\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\DomenicoAurea\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

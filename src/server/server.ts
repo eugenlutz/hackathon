@@ -1,8 +1,18 @@
 import express from 'express'
 import path from 'path'
 import http from 'http'
+import cors from 'cors';
+import {
+    moveId,
+    createId,
+    moveIdAuto
+  } from './WarehouseController';
+  import db from './db'
 
 const port: number = 3000
+
+db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
+db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
 
 class App {
     private server: http.Server
@@ -11,7 +21,13 @@ class App {
     constructor(port: number) {
         this.port = port
         const app = express()
+        app.use(cors());
         app.use(express.static(path.join(__dirname, '../client')))
+        app.post('/move/:id', moveIdAuto)
+        app.post('/move/:id:bin', moveId)
+        app.put('create/:id', createId)
+        app.listen(4000, () => console.log('Server running on port 4000'));
+
         // In the webpack version of the boilerplate, it is not necessary
         // to add static references to the libs in node_modules if
         // you are using module specifiers in your client.ts imports.
@@ -37,5 +53,21 @@ class App {
         })
     }
 }
+
+function handleError(err?:Error | NodeJS.Signals | void) {
+    if(err) {
+        console.error(err);
+
+        if(err instanceof Error) {
+            console.error(err.stack);    
+        }
+    }
+    
+    db.disconnect({ force: true });
+    process.exit(0);
+}
+
+process.on('uncaughtException', handleError);
+process.on('SIGINT', handleError);
 
 new App(port).Start()

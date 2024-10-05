@@ -2,7 +2,8 @@
     "compilerOptions": {
         "target": "ES6",
         "moduleResolution": "bundler",
-        "strict": true
+        "strict": true,
+        "sourceMap": true
     },
     "include": ["**/*.ts", "**/*.gltf"]
 }
