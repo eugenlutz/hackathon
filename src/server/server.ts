@@ -1,7 +1,10 @@
 import express from 'express'
 import path from 'path'
 import http from 'http'
-import routes from './routes'
+import {
+    moveId,
+    createId
+  } from './WarehouseController';
 
 const port: number = 3000
 
@@ -13,7 +16,8 @@ class App {
         this.port = port
         const app = express()
         app.use(express.static(path.join(__dirname, '../client')))
-        app.use('/api', routes)
+        app.post('/move/:id:bin', moveId)
+        app.put('create/:id', createId)
         // In the webpack version of the boilerplate, it is not necessary
         // to add static references to the libs in node_modules if
         // you are using module specifiers in your client.ts imports.
