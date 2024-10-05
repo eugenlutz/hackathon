@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import IWarehouseClient from './WarehouseClient';
 
 interface IInteractionManager {
     showContextMenu(event: MouseEvent, object: THREE.Object3D): void;
@@ -11,14 +12,15 @@ class InteractionManager implements  IInteractionManager {
     private raycaster: THREE.Raycaster;
     private mouse: THREE.Vector2;
     private camera: THREE.Camera;
+    private warehouseClient: IWarehouseClient;
 
-    constructor(scene: THREE.Scene, camera: THREE.Camera) {
+    constructor(scene: THREE.Scene, camera: THREE.Camera, warehouseClient: IWarehouseClient) {
         this.scene = scene;
         this.raycaster = new THREE.Raycaster();
         this.mouse = new THREE.Vector2();
         this.camera = camera;
         this.contextMenu = this.createContextMenu();        
-
+        this.warehouseClient = warehouseClient;
         window.addEventListener('mousedown', (event) => this.onDocumentMouseDown(event));
         window.addEventListener('contextmenu', (event) => event.preventDefault());
     }
@@ -41,23 +43,13 @@ class InteractionManager implements  IInteractionManager {
         this.contextMenu.style.left = `${event.clientX}px`;
         this.contextMenu.style.top = `${event.clientY}px`;
 
-        // Customize your context menu options
         this.contextMenu.innerHTML = `
-            <div>Move: ${object.id}</div>
+        <div>Object ID: ${object.id}</div>
+        <div class="menu-item">Move</div>
         `;
-
-        // Add functionality to menu items
-        this.contextMenu.onclick = (e: MouseEvent) => {
-            const target = e.target as HTMLElement;
-            if (target.innerText === 'Remove Object') {
-                this.scene.remove(object); // Remove object from scene
-            }
-            this.contextMenu.style.display = 'none'; // Hide menu after action
-        };
     }
-
+    
     private onDocumentMouseDown(event: MouseEvent): void {
-        // Hide context menu if clicked outside
         this.contextMenu.style.display = 'none';
 
         this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -69,8 +61,25 @@ class InteractionManager implements  IInteractionManager {
         if (intersects.length > 0) {
             const clickedObject = intersects[0].object;
 
-            // Show context menu on right-click (event.button === 2)
-            if (event.button === 2) {
+            if (event.button === 0)
+            {
+                const target = event.target as HTMLElement;
+                if (target.classList.contains('menu-item')) {
+                if (target.innerText === 'Move') {
+                    
+                    (async () => {
+                        try {
+                            await this.warehouseClient.move(clickedObject.id);
+                            console.log('Async method completed successfully.');
+                        } catch (error) {
+                            console.error('Error in async method:', error);
+                        }
+                    })();
+                }
+                this.contextMenu.style.display = 'none';
+            }
+            }    
+            else if (event.button === 2) {
                 this.showContextMenu(event, clickedObject);
             }
         }
