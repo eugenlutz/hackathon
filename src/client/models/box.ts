@@ -15,7 +15,6 @@ class Box {
     constructor(id: number, position: Vector3) 
     {
         this.id = id
-
         this.init(position)
     }
 
@@ -26,21 +25,22 @@ class Box {
             BoxDimensions.Height, 
             BoxDimensions.Length
         )
-
+        this.mesh = new Mesh(geometry)
         this.moveTo(position)
-        const material = new MeshBasicMaterial(
+        this.mesh.material = new MeshBasicMaterial(
             {
                 color: BoxColors.Default
             }
         )
-
-        this.mesh = new Mesh(geometry, material)
-        
     }
 
     moveTo(position: Vector3)
     {        
         this.mesh.geometry.translate(position.x, position.y, position.z)
+    }
+
+    getMesh() : Mesh{
+        return this.mesh;
     }
 }
 

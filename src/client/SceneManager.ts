@@ -1,5 +1,5 @@
 import { AmbientLight, Light, PerspectiveCamera, Scene, SpotLight, Vector3 } from "three";
-import Box from "./Box";
+import Box from "./models/box";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import InteractionManager from './InteractionManager';
 import WarehouseClient from "./WarehouseClient";
@@ -26,13 +26,13 @@ class SceneManager {
         this.initCamera()
         this.initLights()
         this.loadModel()
-        this.interactionManager = new InteractionManager(this.scene, this.camera, warehouseClient);
+        this.interactionManager = new InteractionManager(this.scene, this.camera, warehouseClient, this.boxes);
         
     }
 
     initShelves()
     {
-        this.warehouseClient.GetBins(),
+        this.warehouseClient.getBins();
     }
 
     initCamera() {
@@ -86,6 +86,7 @@ class SceneManager {
     addBox(id: number, position: Vector3) {
         let box = new Box(id, position)
         this.scene.add(box.mesh)
+        this.boxes.push(box)
     }
 
     moveBox(id: number, position: Vector3)

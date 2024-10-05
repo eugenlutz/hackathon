@@ -6,30 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Box = void 0;
+exports.BoxToBin = void 0;
 const typeorm_1 = require("typeorm");
-let Box = class Box {
+const Box_1 = require("./Box");
+const Bin_1 = require("./Bin");
+let BoxToBin = class BoxToBin {
 };
-exports.Box = Box;
+exports.BoxToBin = BoxToBin;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)({
         type: "int"
     })
-], Box.prototype, "id", void 0);
+], BoxToBin.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        type: "int",
-        unique: true,
-        nullable: false
-    })
-], Box.prototype, "number", void 0);
+    (0, typeorm_1.OneToOne)(() => Box_1.Box, (box) => box.id) // specify inverse side as a second parameter
+], BoxToBin.prototype, "box_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        type: "int",
-        nullable: false,
-        default: 1,
-    })
-], Box.prototype, "size", void 0);
-exports.Box = Box = __decorate([
+    (0, typeorm_1.OneToMany)(() => Bin_1.Bin, (bin) => bin.id)
+], BoxToBin.prototype, "bin_id", void 0);
+exports.BoxToBin = BoxToBin = __decorate([
     (0, typeorm_1.Entity)()
-], Box);
+], BoxToBin);

@@ -11,8 +11,8 @@ import {
 
 const port: number = 3000
 
-db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
-db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
+//db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
+//db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
 
 class App {
     private server: http.Server
