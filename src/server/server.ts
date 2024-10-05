@@ -5,8 +5,22 @@ import {
     moveId,
     createId
   } from './WarehouseController';
+import "reflect-metadata"
+import "typeorm";
+import { DataSource } from 'typeorm';
+import {Bin} from '../entity/Bin'
+import {Box} from '../entity/Box'
+import {BoxToBin} from '../entity/BoxToBin'
 
 const port: number = 3000
+
+const AppDataSource = new DataSource({
+    type: 'sqlite',
+    database: '../db/warehouse.db',
+    entities: [Bin,Box,BoxToBin],
+    synchronize: true,
+    logging: true
+})
 
 class App {
     private server: http.Server
@@ -15,6 +29,7 @@ class App {
     constructor(port: number) {
         this.port = port
         const app = express()
+
         app.use(express.static(path.join(__dirname, '../client')))
         app.post('/move/:id:bin', moveId)
         app.put('create/:id', createId)
@@ -38,10 +53,18 @@ class App {
     }
 
     public Start() {
+
         this.server.listen(this.port, () => {
             console.log(`Server listening on port ${this.port}.`)
         })
     }
 }
+
+AppDataSource.initialize()
+.then(() => { 
+    console.log('Datenbank blabla');
+})
+.catch((error) => console.error('Fehler', error));
+
 
 new App(port).Start()

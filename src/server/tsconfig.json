@@ -4,7 +4,9 @@
         "module": "commonjs",
         "outDir": "../../dist/server",
         "esModuleInterop": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "include": ["**/*.ts"]
 }
