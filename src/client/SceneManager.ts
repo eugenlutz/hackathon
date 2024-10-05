@@ -1,6 +1,7 @@
 import { AmbientLight, Light, PerspectiveCamera, Scene, SpotLight, Vector3 } from "three";
 import Box from "./Box";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import InteractionManager from './InteractionManager';
 
 class SceneManager {
 
@@ -9,12 +10,14 @@ class SceneManager {
     boxes: Box[]
     camera!: PerspectiveCamera
     lights: Light[]
+    interactionManager: InteractionManager
 
     constructor(scene: Scene) {
         this.scene = scene
         this.boxes = new Array()
         this.lights = new Array()
         this.loader = new GLTFLoader()
+        this.interactionManager = new InteractionManager(this.scene, this.camera);
         this.initCamera()
         this.initLights()
         this.loadModel()

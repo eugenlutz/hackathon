@@ -49,9 +49,6 @@ class InteractionManager implements  IInteractionManager {
         // Add functionality to menu items
         this.contextMenu.onclick = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-            // if (target.innerText === 'Change Color') {
-            //     object.material.color.set(Math.random() * 0xffffff); // Change object color
-            // }
             if (target.innerText === 'Remove Object') {
                 this.scene.remove(object); // Remove object from scene
             }
