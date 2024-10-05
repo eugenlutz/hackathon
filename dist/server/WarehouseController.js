@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.moveIdAuto = exports.moveId = exports.createId = void 0;
+exports.getBins = exports.moveIdAuto = exports.moveId = exports.createId = void 0;
+const typeorm_1 = require("typeorm");
+const Bin_1 = require("./entities/Bin");
 const createId = (req, res) => {
     console.log('createId called with ' + req);
     res.send('createId received');
@@ -16,3 +18,10 @@ const moveIdAuto = (req, res) => {
     res.status(200).json({ id: req.params['id'], bin: "12" });
 };
 exports.moveIdAuto = moveIdAuto;
+const getBins = async (req, res) => {
+    console.log('getBins called.');
+    const bins = await (0, typeorm_1.getRepository)(Bin_1.Bin).find();
+    console.log('Bins loaded: ' + bins.length);
+    res.status(200).json({ bins });
+};
+exports.getBins = getBins;

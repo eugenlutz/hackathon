@@ -5,7 +5,8 @@ import cors from 'cors';
 import {
     moveId,
     createId,
-    moveIdAuto
+    moveIdAuto,
+    getBins
   } from './WarehouseController';
   import db from './db'
 
@@ -26,6 +27,7 @@ class App {
         app.post('/move/:id', moveIdAuto)
         app.post('/move/:id:bin', moveId)
         app.put('create/:id', createId)
+        app.get('/bins', getBins)
         app.listen(4000, () => console.log('Server running on port 4000'));
 
         // In the webpack version of the boilerplate, it is not necessary

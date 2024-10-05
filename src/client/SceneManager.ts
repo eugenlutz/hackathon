@@ -32,7 +32,7 @@ class SceneManager {
 
     initShelves()
     {
-        this.warehouseClient.GetBins(),
+        this.warehouseClient.getBins()
     }
 
     initCamera() {

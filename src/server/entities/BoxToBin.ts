@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, OneToOne, OneToMany } from "typeorm";
-import { Box } from "./Box";
+import { Box } from "./box";
 import { Bin } from "./Bin";
 
 @Entity()

@@ -21,6 +21,7 @@ class App {
         app.post('/move/:id', WarehouseController_1.moveIdAuto);
         app.post('/move/:id:bin', WarehouseController_1.moveId);
         app.put('create/:id', WarehouseController_1.createId);
+        app.get('/bins', WarehouseController_1.getBins);
         app.listen(4000, () => console.log('Server running on port 4000'));
         // In the webpack version of the boilerplate, it is not necessary
         // to add static references to the libs in node_modules if

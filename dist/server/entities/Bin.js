@@ -6,30 +6,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Box = void 0;
+exports.Bin = void 0;
 const typeorm_1 = require("typeorm");
-let Box = class Box {
+let Bin = class Bin {
 };
-exports.Box = Box;
+exports.Bin = Bin;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)({
         type: "int"
     })
-], Box.prototype, "id", void 0);
+], Bin.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         type: "int",
         unique: true,
         nullable: false
     })
-], Box.prototype, "number", void 0);
+], Bin.prototype, "number", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         type: "int",
         nullable: false,
         default: 1,
     })
-], Box.prototype, "size", void 0);
-exports.Box = Box = __decorate([
+], Bin.prototype, "capa", void 0);
+exports.Bin = Bin = __decorate([
     (0, typeorm_1.Entity)()
-], Box);
+], Bin);
