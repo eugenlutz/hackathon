@@ -1,7 +1,8 @@
 import express from 'express';
 import {
   moveId,
-  createId
+  createId,
+  moveIdAuto
 } from './WarehouseController';
 
 const router = express.Router();
