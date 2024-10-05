@@ -8,11 +8,11 @@ const createId = (req, res) => {
 exports.createId = createId;
 const moveId = (req, res) => {
     console.log('moveId called with ' + req.params['id']);
-    res.status(200).json({ bin: "12" });
+    res.status(200).json({ id: req.params['id'], bin: "12" });
 };
 exports.moveId = moveId;
 const moveIdAuto = (req, res) => {
-    console.log('moveId called with ' + req.params['id'] + 'and' + req.params['bin']);
-    res.status(200).json({ bin: "12" });
+    console.log('moveIdAuto called with ' + req.params['id'] + 'and' + req.params['bin']);
+    res.status(200).json({ id: req.params['id'], bin: "12" });
 };
 exports.moveIdAuto = moveIdAuto;
