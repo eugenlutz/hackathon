@@ -77,6 +77,10 @@ class SceneManager {
                 console.log('An error happened:', error);
 
             })
+
+        this.addBox(1, new Vector3(1,2,3));
+        this.addBox(2, new Vector3(4,5,6));
+        this.addBox(3, new Vector3(7,8,9));
     }
 
     addBox(id: number, position: Vector3) {

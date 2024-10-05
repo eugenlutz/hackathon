@@ -16,12 +16,6 @@ class App {
     constructor(port) {
         this.port = port;
         const app = (0, express_1.default)();
-        // Allow requests from specific origins (e.g., http://localhost:3000)
-        const corsOptions = {
-            origin: 'http://127.0.0.1:3000', // Replace this with your front-end URL
-            methods: 'GET,POST,PUT,DELETE', // Allowed methods
-            allowedHeaders: 'Content-Type,Authorization', // Allowed headers
-        };
         app.use((0, cors_1.default)());
         app.use(express_1.default.static(path_1.default.join(__dirname, '../client')));
         app.post('/move/:id', WarehouseController_1.moveIdAuto);
