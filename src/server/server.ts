@@ -7,13 +7,14 @@ import {
     createId,
     moveIdAuto,
     getBins
-  } from './WarehouseController';
-  import db from './db'
+} from './WarehouseController';
+// import db from './db'
+import { AppDataSource } from './data-source';
 
 const port: number = 3000
 
-db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
-db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
+// db.eventManager.on(db.Events.Connected, () => console.log('Successfully connected to Database.'));
+// db.eventManager.on(db.Events.Disconnected, () => console.log('Disconnected from DB.'));
 
 class App {
     private server: http.Server
@@ -53,19 +54,26 @@ class App {
         this.server.listen(this.port, () => {
             console.log(`Server listening on port ${this.port}.`)
         })
+        AppDataSource.initialize()
+            .then(() => {
+                console.log("Data Source has been initialized!")
+            })
+            .catch((err) => {
+                console.error("Error during Data Source initialization", err)
+            })
     }
 }
 
-function handleError(err?:Error | NodeJS.Signals | void) {
-    if(err) {
+function handleError(err?: Error | NodeJS.Signals | void) {
+    if (err) {
         console.error(err);
 
-        if(err instanceof Error) {
-            console.error(err.stack);    
+        if (err instanceof Error) {
+            console.error(err.stack);
         }
     }
-    
-    db.disconnect({ force: true });
+
+    // db.disconnect({ force: true });
     process.exit(0);
 }
 

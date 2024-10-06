@@ -4,6 +4,7 @@
         "module": "commonjs",
         "outDir": "../../dist/server",
         "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "skipLibCheck": true
     },
