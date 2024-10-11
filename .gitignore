@@ -1,6 +1,7 @@
 ## Ignore Node.js files
 node_modules
 package-lock.json
+dist/server
 
 
 ## Ignore Visual Studio temporary files, build results, and
