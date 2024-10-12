@@ -1,7 +1,10 @@
-### Commands for server (directory) ###
+## Commands for server (directory) ##
 
-_src/server/<...>_
+Change directory to: 
 
+_src/server/_
+
+### Commands for build and run ###
 
 **Build** Server:
 
@@ -12,8 +15,9 @@ _src/server/<...>_
 
 `npm start`
 
+### Commands for db migrations ###
 
-Generate Migration:
+**Generate** Migration:
 
 `npx typeorm-ts-node-commonjs migration:generate --pretty .\migrations\<migration name> -d data-source.ts`
 
